@@ -14,7 +14,7 @@ const del = require('del');
 ///////////////////////////////////////////////////////
 
 //CSS
-const styleSheetsSource = 'src/stylesheets/**/*.scss';
+const styleSheetsSource = 'src/stylesheets/**/*.{scss,sass}';
 const styleSheetsTarget = 'dist/stylesheets';
 
 //JS
@@ -43,13 +43,13 @@ gulp.task('html', () => {
 //STYLESHEET
 gulp.task('stylesheet', () => {
     return gulp.src(styleSheetsSource)
-        .pipe(concat('style.min.css'))
-        .pipe(autoprefixer())
         .pipe(sass({
             outputStyle: 'compressed',
             sourceComments: false,
             includePaths: ['.']
         }).on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(concat('style.min.css'))
         .pipe(gulp.dest(styleSheetsTarget))
         .pipe(browserSync.stream())
 });

@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="stylesheets/style.min.css">
 </head>
 <body>
-    
+
+    <label for="popup-1" id="popup-1-label">Share</label>
+    <input type="checkbox" id="popup-1">
+
+    <div class="popup-area">
+        <div class="popup">
+            <label class="close-button" for="popup-1"></label>
+            <h5>Share this design</h5>
+            <ul>
+                <li><a href="#"><img src="./assets/images/facebook.svg" alt="Facebook Logo"></a></li>
+                <li><a href="#"><img src="./assets/images/instagram.svg" alt="Instagram Logo"></a></li>
+                <li><a href="#"><img src="./assets/images/spotify.svg" alt="Spotify Logo"></a></li>
+                <li><a href="#"><img src="./assets/images/tumblr.svg" alt="Tumblr Logo"></a></li>
+                <li><a href="#"><img src="./assets/images/twitter.svg" alt="Twitter Logo"></a></li>
+                <li><a href="#"><img src="./assets/images/whatsapp.svg" alt="Whatsapp Logo"></a></li>
+            </ul>
+            <h6>Or copy link</h6>
+            <div class="copy-area">
+                <input type="text" readonly id="share-link" value="https://www.uidesigndaily.com/posts/5d6ab9ea91deae0012006d44">
+                <button onclick="copy(event,'share-link')">Copy</button>
+            </div>
+        </div>
+    </div>
+
     <script src="javascripts/app.min.js"></script>
 </body>
 </html>
